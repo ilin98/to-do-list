@@ -43,3 +43,14 @@ addButton.addEventListener("click", () => {
         form.className = "hidden"
     }
 })
+
+function deleteTask(id) {
+    fetch (`http://localhost:3000/tasks/${id}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(resp => resp.json())
+    .then(task => console.log(task))
+}
