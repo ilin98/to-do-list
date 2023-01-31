@@ -1,0 +1,40 @@
+{
+    "tasks": [
+      {
+        "id": 1,
+        "task": "Wash the dishes",
+        "date": "",
+        "notes": ""
+      },
+      {
+        "id": 2,
+        "task": "Take Spot out for a walk",
+        "date": "",
+        "notes": "go after dinner"
+      },
+      {
+        "id": 3,
+        "task": "Apply for scholarship",
+        "date": "2023-02-03",
+        "notes": "academic scholarship"
+      },
+      {
+        "id": 4,
+        "task": "Finish work assignment",
+        "date": "2023-02-20",
+        "notes": "complete project for presentation"
+      },
+      {
+        "id": 5,
+        "task": "Take out the trash",
+        "date": "",
+        "notes": ""
+      },
+      {
+        "task": "sdrg",
+        "date": "2023-01-03",
+        "notes": "",
+        "id": 6
+      }
+    ]
+  }
