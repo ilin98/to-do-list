@@ -44,6 +44,34 @@ addButton.addEventListener("click", () => {
     }
 })
 
+//Adding event for submit button on form
+document.querySelector("#to-do-form").addEventListener("submit", handleSubmit)
+
+function handleSubmit(e) {
+    e.preventDefault()
+    let taskObj = {
+        task: e.target.task.value,
+        date: e.target.date.value,
+        notes: e.target.notes.value
+    }
+    e.target.reset()
+    renderOneTask(taskObj)
+    postTask(taskObj)
+}
+
+function postTask(taskObj) {
+    fetch("http://localhost:3000/tasks", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        },
+        body: JSON.stringify(taskObj)
+    })
+    .then(resp => resp.json())
+    .then(task => console.log(task))
+}
+
 function deleteTask(id) {
     fetch (`http://localhost:3000/tasks/${id}`, {
         method: "DELETE",
