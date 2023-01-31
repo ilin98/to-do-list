@@ -24,3 +24,17 @@ function getAllTasks() {
 }
 
 getAllTasks()
+
+const form = document.querySelector(".hidden")
+const addButton = document.querySelector(".unpressed-button")
+addButton.addEventListener("click", () => {
+    if (addButton.className === "unpressed-button") {
+        addButton.className = "pressed-button"
+        addButton.textContent = "-"
+        form.className = "not-hidden"
+    } else {
+        addButton.className = "unpressed-button"
+        addButton.textContent = "+"
+        form.className = "hidden"
+    }
+})
