@@ -9,6 +9,11 @@ function renderOneTask(task) {
     <p id="task-date">${task.date}</p>
     <button id="delete" type="delete-button">x</button>
     `
+    //add event listener to 'delete' button
+    card.querySelector("#delete").addEventListener("click", () => {
+        card.remove()
+        deleteTask(task.id)
+    })
     //add task to DOM
     container.appendChild(card)
 }
