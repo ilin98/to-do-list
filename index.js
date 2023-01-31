@@ -9,6 +9,13 @@ function renderOneTask(task) {
     <p id="task-date">${task.date}</p>
     <button id="delete" type="delete-button">x</button>
     `
+    //add mouseover event
+    card.addEventListener("mouseover", () => {
+        card.style.backgroundColor = 'gainsboro'
+    })
+    card.addEventListener("mouseout", () => {
+        card.style.backgroundColor = "white"
+    })
     //add event listener to 'delete' button
     card.querySelector("#delete").addEventListener("click", () => {
         card.remove()
@@ -29,7 +36,6 @@ function getAllTasks() {
 }
 
 getAllTasks()
-
 const form = document.querySelector(".hidden")
 const addButton = document.querySelector(".unpressed-button")
 addButton.addEventListener("click", () => {
