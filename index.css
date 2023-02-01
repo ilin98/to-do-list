@@ -78,14 +78,15 @@ label {
 }
 
 #task-notes{
-    position: absolute;
-    margin-left: 400px;
+    position:absolute;
+    margin-left: 20%;
     color: rgb(160, 167, 176);
 }
 
 #task-date{
     position: absolute;
     margin-left: 60%;
+    margin-right: 15%
 }
 
 #submit-form {

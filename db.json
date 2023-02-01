@@ -29,6 +29,12 @@
       "task": "Take out the trash",
       "date": "",
       "notes": ""
+    },
+    {
+      "task": "go take a shower",
+      "date": "2023-01-31",
+      "notes": "martina take shower",
+      "id": 6
     }
   ]
 }
