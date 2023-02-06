@@ -9,48 +9,41 @@ function renderOneTask(task) {
     <p id="task-date">${task.date}</p>
     <button id="delete" type="delete-button">x</button>
     `
-    //add mouseover event
     card.addEventListener("mouseover", () => {
         card.style.backgroundColor = 'gainsboro'
     })
     card.addEventListener("mouseout", () => {
         card.style.backgroundColor = "white"
     })
-    //add event listener to 'delete' button
     card.querySelector("#delete").addEventListener("click", () => {
         card.remove()
         deleteTask(task.id)
     })
-    //add task to DOM
     container.appendChild(card)
 }
 
 function getAllTasks() {
     fetch("http://localhost:3000/tasks")
     .then((resp) => resp.json())
-    .then(taskData => {
-        for (let i = 0; i < taskData.length; i++) {
-            renderOneTask(taskData[i])
-        }
-    })
+    .then(taskData => taskData.forEach(renderOneTask))
 }
 
 getAllTasks()
+
 const form = document.querySelector(".hidden")
 const addButton = document.querySelector(".unpressed-button")
 addButton.addEventListener("click", () => {
     if (addButton.className === "unpressed-button") {
         addButton.className = "pressed-button"
-        addButton.textContent = "-"
+        addButton.textContent = "minimize"
         form.className = "not-hidden"
     } else {
         addButton.className = "unpressed-button"
-        addButton.textContent = "+"
+        addButton.textContent = "Add task"
         form.className = "hidden"
     }
 })
 
-//Adding event for submit button on form
 document.querySelector("#to-do-form").addEventListener("submit", handleSubmit)
 
 function handleSubmit(e) {
@@ -61,7 +54,6 @@ function handleSubmit(e) {
         notes: e.target.notes.value
     }
     e.target.reset()
-    renderOneTask(taskObj)
     postTask(taskObj)
 }
 
@@ -75,7 +67,7 @@ function postTask(taskObj) {
         body: JSON.stringify(taskObj)
     })
     .then(resp => resp.json())
-    .then(task => console.log(task))
+    .then(task => renderOneTask(task))
 }
 
 function deleteTask(id) {
