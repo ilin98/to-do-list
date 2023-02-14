@@ -15,7 +15,6 @@ h1 {
     margin: 20px 0 5% 0;
 }
 
-/* when button is clicked, class becomes ".pressed-button" which causes the button to disappear. */
 .pressed-button {
     margin: 0 0 5% 0
 }
@@ -24,7 +23,6 @@ h1 {
     display: none;
 }
 
-/* when "unpressed-button" is clicked, class of div form becomes "not-hidden", causing it to appear. */
 .not-hidden {
     background-color: whitesmoke;
     padding: 10px;
@@ -60,8 +58,6 @@ label {
     display: block;
     margin-top: 20px
 }
-
-/* Format for appended lists */
 
 .task{
     background-color: whitesmoke;
